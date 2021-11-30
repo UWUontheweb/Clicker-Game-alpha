@@ -8,6 +8,10 @@ var cursurcost = 15;
 var Cursurs = 0;
 var cursorcosturbo = 1500;
 var omgc = 0;
+var omgd = 0;
+var ultraclickcost = 5000;
+
+
 
 //function list
 
@@ -58,6 +62,18 @@ function buycursor (amount) {
     document.getElementById("score").innerHTML = score;
   }
   
+  function buyUltraclicks(amount) {
+      if (score >= ultraclickcost) {
+          score = score - ultraclickcost;
+
+          omgd = omgd + 1;
+          ultraclickcost = ultraclickcost + 36
+        
+          document.getElementById("score").innerHTML = score;
+          document.getElementById("buyultracoursorcost").innerHTML = ultraclickcost;
+      }
+  }
+
 
 //the timmer that adds the score every second
 
@@ -80,3 +96,8 @@ function buycursor (amount) {
   setInterval (function () {
     score = score + omgc;
   }, 90);
+
+
+  setInterval (function () {
+    score = score + omgd;
+  }, 10);
