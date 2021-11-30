@@ -1,14 +1,15 @@
+//var list
+
 var score = 0;
 var omgb = 0;
 var cursurcosttauto = 100;
 var omg = 0
-
-  
-
 var cursurcost = 15;
 var Cursurs = 0;
 var cursorcosturbo = 1500;
 var omgc = 0;
+
+//function list
 
 function buycursor (amount) {
   if (score >= cursurcost) {
@@ -25,7 +26,7 @@ function buycursor (amount) {
   }
 
 
-  function BuyTurboclick(amount) {
+  function buyTurboclick(amount) {
     if (score >= cursorcosturbo) {
       score = score - cursorcosturbo;
 
@@ -57,6 +58,9 @@ function buycursor (amount) {
     document.getElementById("score").innerHTML = score;
   }
   
+
+//the timmer that adds the score every second
+
   setInterval (function () {
     score = score + omg;
     document.getElementById("score").innerHTML = score;
@@ -72,3 +76,7 @@ function buycursor (amount) {
       
       
   }, 300);
+
+  setInterval (function () {
+    score = score + omgc;
+  }, 90);
